@@ -2522,13 +2522,13 @@ init(int argc, char *argv[])
 			break;
 		case GETOPT_STACKTRACE_FRAMES_LIMIT:
 #ifdef ENABLE_STACKTRACE
-            i = string_to_uint(optarg);
+			i = string_to_uint(optarg);
 			if (i < 0 || (unsigned int) i > -1U / 4)
 				error_opt_arg(c, lopt, optarg);
 			stacktrace_frames_limit = i;
 			break;
 #else
-            error_msg_and_die("Stack traces (-k/--stack-traces "
+			error_msg_and_die("Stack traces (-k/--stack-traces "
 					  "option) are not supported by this "
 					  "build of strace");
 #endif
